@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!--
+    So Simple Jekyll Theme 3.1.1
+    Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+    Free for personal and commercial use under the MIT license
+    https://github.com/mmistakes/so-simple-theme/blob/master/LICENSE
+-->
+<html lang="en-US" class="no-js">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+
+  
+    
+    <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>HMGCC Pen cipher challenge | ENUPGR</title>
+<meta name="generator" content="Jekyll v3.8.4" />
+<meta property="og:title" content="HMGCC Pen cipher challenge" />
+<meta name="author" content="Peter Aaby" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="One of the challenges from UK Cyber Challenge F2F hosted by HMGCC" />
+<meta property="og:description" content="One of the challenges from UK Cyber Challenge F2F hosted by HMGCC" />
+<link rel="canonical" href="http://localhost:4000/HMGCC-pen-cipher/" />
+<meta property="og:url" content="http://localhost:4000/HMGCC-pen-cipher/" />
+<meta property="og:site_name" content="ENUPGR" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-08-20T00:00:00+01:00" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:site" content="@enupgr" />
+<meta name="twitter:creator" content="@aabywan" />
+<script type="application/ld+json">
+{"description":"One of the challenges from UK Cyber Challenge F2F hosted by HMGCC","url":"http://localhost:4000/HMGCC-pen-cipher/","headline":"HMGCC Pen cipher challenge","dateModified":"2017-08-20T00:00:00+01:00","datePublished":"2017-08-20T00:00:00+01:00","@type":"BlogPosting","author":{"@type":"Person","name":"Peter Aaby"},"mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/HMGCC-pen-cipher/"},"@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+  <script>
+    /* Cut the mustard */
+    if ( 'querySelector' in document && 'addEventListener' in window ) {
+      document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'js';
+    }
+  </script>
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i|Lora:400,400i,700,700i">
+  <link rel="alternate" type="application/atom+xml" title="ENUPGR" href="/atom.xml">
+<!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+</head>
+
+
+  <body class="layout--post  hmgcc-pen-cipher-challenge">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#primary-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    
+  <div class="navigation-wrapper">
+    <a href="#menu-toggle" id="menu-toggle">Menu</a>
+    <nav id="primary-nav" class="site-nav animated drop">
+      <ul><li><a href="/">Home</a></li></ul>
+    </nav>
+  </div><!-- /.navigation-wrapper -->
+
+
+    <header class="masthead">
+  <div class="wrap">
+    
+    
+      <h1 class="site-title animated fadeIn"><a href="/">ENUPGR</a></h1>
+      <p class="site-description animated fadeIn" itemprop="description">Edinburgh Napier Universit Post Graduate Researcher community</p>
+    
+  </div>
+</header><!-- /.masthead -->
+
+
+    <main id="main" class="main-content" aria-label="Content">
+  <article class="h-entry">
+    
+
+    <div class="page-wrapper">
+      <header class="page-header">
+        
+        
+          <h1 id="page-title" class="page-title p-name">HMGCC Pen cipher challenge
+</h1>
+        
+      </header>
+
+      <div class="page-sidebar">
+        <div class="page-author h-card p-author"><img src="https://pbs.twimg.com/profile_images/595657894974066689/Fat8pTR6_400x400.jpg" class="author-avatar u-photo" alt="Peter Aaby"><div class="author-info"><div class="author-name">
+        <em>by</em> <span class="p-name">Peter Aaby</span>
+      </div><ul class="author-links"><li class="author-link">
+            <a class="u-url" rel="me" href="https://twitter.com/aabywan"><i class="fab fa-twitter-square fa-lg" title="Twitter"></i></a>
+          </li></ul>
+    <time class="page-date dt-published" datetime="2017-08-20T00:00:00+01:00"><a class="u-url" href="">August 20, 2017</a>
+</time>
+
+  </div>
+</div>
+
+        
+
+        
+  <h3 class="page-taxonomies-title">Tags</h3>
+  <ul class="page-taxonomies"><li class="page-taxonomy">HMGCC</li><li class="page-taxonomy">UK Cyber Security Challenge</li>
+  </ul>
+
+
+      </div>
+
+      <div class="page-content">
+        <div class="e-content">
+          <p>On Friday 11 August, <a href="https://www.hmgcc.gov.uk/">HMGCC</a> hosted the third out of five Face to Face events at the UK Defence Academy which is part of the 2017 <a href="https://www.cybersecuritychallenge.org.uk/competitions/face-to-face">Cyber Security Challenge UK</a> masterclass qualifiers.</p>
+
+<p>As host, HMGCC found the perfect environment to host a cyber security challenge and it was within this environment that they managed to hide one of their challenges in plain sight; a swag pen with HEX characters forming the letters <strong>HMGCC</strong>. It took the better of an hour before officials had to announce that everybody should “search their tables for any foreign objects”. A pen had for each team member been placed on our desks overnight, and I personally (as well as everyone else) did not think any more of this until the hint was announced. Below is a photo of the pen.</p>
+
+<p><img src="/images/posts/hmgcc-hex-pen.jpg" alt="center-aligned-image" class="align-center" /></p>
+
+<h1 id="pen-hex-values-digitalised">Pen HEX values digitalised</h1>
+<p>The obvious first step was to digitalise the HEX values found on the pen. However, some of the letters and digits caused issues as it was hard to distinguish S and 5 from each other. Therefore, first attempt failed and my team mate Eed gave a helping hand by checking for typo’s. Below is the final digital printout which is the basis of the challenge.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>A5     97  0E      CD  3CF2A0   F3BFAF  2418FC
+E2     CB  C906  6EBD  3A       F2      CA
+B972E5CB9  72  EA  59  70  ECD  3C      F2
+A0     F3  BF  AF  24  18  FC   E2      CB
+C9     06  6E      BD  3AF2CA   B972E5  CB972E
+</code></pre></div></div>
+<p>With the HEX values captured, an initial conversion from HEX to ASCII was attempted using <a href="https://www.asecuritysite.com/coding/ascii?hex=62657274&amp;hex=62657274">asecuritysite’s ASCII, Hex, Base-64 and Binary convertor</a>. The results did not return 100% positive. However, the ASCII conversion gave away that the HEX values had been duplicated. At this moment, we got stuck and the time presure with other challenges due made us decide on utilising one of our free hints (hint disclosed in next section).</p>
+
+<p>We did not have enough time to program anything during the challenge, thus the above website was used for analysis and conversion from HEX to ASCII. After the challenge, I decided that it would be interesting to script a solution and below code snippet shows how it could have been done using Python 2.7.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">binascii</span>
+
+<span class="nb">hex</span> <span class="o">=</span> <span class="s">"""   A5     97  0E      CD  3CF2A0   F3BFAF  2418FC
+            E2     CB  C906  6EBD  3A       F2      CA
+            B972E5CB9  72  EA  59  70  ECD  3C      F2
+            A0     F3  BF  AF  24  18  FC   E2      CB
+            C9     06  6E      BD  3AF2CA   B972E5  CB972E"""</span>
+
+<span class="nb">hex</span> <span class="o">=</span> <span class="nb">hex</span><span class="o">.</span><span class="n">translate</span><span class="p">(</span><span class="bp">None</span><span class="p">,</span> <span class="s">' </span><span class="se">\n</span><span class="s">'</span><span class="p">)</span> <span class="c1">#remove whitespace and newlines
+</span><span class="k">print</span> <span class="s">"Hex in ASCII</span><span class="se">\t</span><span class="s">"</span><span class="p">,</span><span class="n">binascii</span><span class="o">.</span><span class="n">unhexlify</span><span class="p">(</span><span class="nb">hex</span><span class="p">)</span>
+<span class="k">print</span> <span class="s">"Count of bytes:"</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="nb">hex</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="s">"bytes</span><span class="se">\n</span><span class="s">"</span>
+</code></pre></div></div>
+
+<p>Python printout:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hex in ASCII	���&lt;��$����n�:�ʹr�˗.���&lt;��$����n�:�ʹr�˗.
+Count of bytes: 56 bytes
+</code></pre></div></div>
+
+<p>As mentioned before, the data duplication can be seen above by the repeating pattern of <strong>�ʹr�˗.</strong> in the middle and at the end of the HEX string. Effectively, the HEX stream can be cut in half or in its entirety. I leave it thus expect the result to come out twice when solved. Double the points, right? :)</p>
+
+<p>Being under time pressure, we decided to leave two team mates working on other challenges, while me and Eed continued with help from the new hint.</p>
+
+<h1 id="hint-spoilers-and-solution-below">Hint (spoilers and solution below)</h1>
+<p>As time progressed, we decided on utilising one of our free hints. It turned out, that we had already passed the first two hints prepared by the officials and we could therefore only get the last one. Mixed feelings, as it meant we had gotten really close, but if we couldn’t make use of the hint then time would have been wasted.</p>
+
+<p>You are waiting for the hint, aren’t you?</p>
+
+<p>Ok, so the hint is simply <strong>SMS</strong></p>
+
+<p>We did not know what to make of it, but raced to Google and  started searching for SMS decoders and quickly discovered an <a href="https://www.diafaan.com/sms-tutorials/gsm-modem-tutorial/online-sms-pdu-decoder/">Online SMS PDU Decoder</a>. This site takes HEX values as input and convert data-streams into readable SMS text messages. Win?! Sadly not, a dead end and we returned to research further into SMS protocols.</p>
+
+<p>At this moment, we still didn’t really know if we had decoded the HEX values correctly, but the duplicated values pointed in the right direction. Thankfully, it didn’t take long till we discovered <a href="https://en.wikipedia.org/wiki/GSM_03.38">GSM 03.38</a>, a 7-bit GSM alphabet which could have been used to generate the hidden message.</p>
+
+<p>From the online conversion on <a href="https://www.asecuritysite.com/coding/ascii?hex=62657274&amp;hex=62657274">asecuritysite</a>, each HEX value had already been converted to binary and we simply copied this manually into a text editor and began deciphering by cutting the bit stream into chunks of 7.</p>
+
+<p>Below is a snippet of the manual process which was used to positively produce the correct answer. HURRAY!</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Binary	HEX	ASCII
+1010010 52	R
+1100101	65	e
+1100001 61 	a 
+1101100 6C 	l
+.
+.
+.
+.
+1110100 74 	t 
+1110101 75 	u 
+1110010 72 	r 
+1100101 65 	e 
+</code></pre></div></div>
+
+<p>Fully automated using Python 2.7 and the bitstring module.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">bitstring</span>
+<span class="n">binaryString</span> <span class="o">=</span> <span class="nb">bin</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">hex</span><span class="p">,</span><span class="mi">16</span><span class="p">))</span>
+<span class="nb">bytes</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">bitstring</span><span class="o">.</span><span class="n">BitArray</span><span class="p">(</span><span class="n">binaryString</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">byte</span> <span class="ow">in</span> <span class="n">b</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="mi">7</span><span class="p">):</span> <span class="c1">#cut bytestream into chunks of 7-bytes
+</span>    <span class="k">print</span> <span class="nb">chr</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">byte</span><span class="o">.</span><span class="nb">bin</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span> <span class="c1">#conv datatypes and print bin&gt;int&gt;char
+</span></code></pre></div></div>
+
+<p>Python printout:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>R
+e
+a
+l
+i
+s
+e
+ 
+y
+o
+u
+r
+ 
+c
+y
+b
+e
+r
+ 
+f
+u
+t
+u
+r
+e
+.
+.
+.
+.
+.
+.
+.
+R
+e
+a
+l
+i
+s
+e
+ 
+y
+o
+u
+r
+ 
+c
+y
+b
+e
+r
+ 
+f
+u
+t
+u
+r
+e
+.
+.
+.
+.
+.
+.
+.
+</code></pre></div></div>
+
+<p>Browsing to <a href="http://www.hmgcc.gov.uk">HMGCC’s</a> website, have a look at the top left logo and picture with a similar quote. Picture linked below.</p>
+
+<p>Thanks to HMGCC for the challenge, now to the second pen that was handed out by the end of the Face to Face challenge :)</p>
+
+<figure class="half">
+	<img src="http://www.hmgcc.gov.uk/assets/img/logo.png" alt="" />
+</figure>
+
+        </div>
+
+        
+          <div class="page-share">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2FHMGCC-pen-cipher%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--facebook btn--small"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i> <span>Share</span></a>
+  <a href="https://twitter.com/intent/tweet?text=HMGCC+Pen+cipher+challenge%20http%3A%2F%2Flocalhost%3A4000%2FHMGCC-pen-cipher%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--twitter btn--small"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i> <span>Tweet</span></a>
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2FHMGCC-pen-cipher%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--linkedin btn--small"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> <span>LinkedIn</span></a>
+  <a href="https://reddit.com/submit?title=HMGCC+Pen+cipher+challenge&url=http%3A%2F%2Flocalhost%3A4000%2FHMGCC-pen-cipher%2F" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" class="btn btn--reddit btn--small"><i class="fab fa-fw fa-reddit" aria-hidden="true"></i> <span>Reddit</span></a>
+</div>
+
+        
+
+        
+
+        <nav class="page-pagination" role="navigation">
+  
+
+  
+</nav>
+
+      </div>
+    </div>
+  </article>
+</main>
+
+
+    <footer id="footer" class="site-footer">
+  <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+<div class="social-icons"><a class="social-icon" href="/atom.xml"><i class="fas fa-rss-square fa-2x" title="Feed"></i></a></div><div class="copyright">
+    
+      <p>&copy; 2018 ENUPGR. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://github.com/mmistakes/so-simple-theme" rel="nofollow">So Simple</a>.</p>
+    
+  </div>
+</footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+  </body>
+
+</html>

@@ -1,0 +1,16 @@
+# Sample Authors
+# Remove file or replace with your own
+
+Peter Aaby:
+  name: Peter Aaby
+  picture: https://pbs.twimg.com/profile_images/595657894974066689/Fat8pTR6_400x400.jpg
+  twitter: "@aabywan"
+  links:
+    - title: Twitter
+      url: https://twitter.com/aabywan
+      icon: fab fa-twitter-square
+
+Cornelius Fiddlebone:
+  name: firstname lastname
+  picture: /images/bio-photo.jpg
+  twitter: twitterhandle

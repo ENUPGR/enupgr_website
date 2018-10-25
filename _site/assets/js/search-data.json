@@ -1,0 +1,6 @@
+var store = [{
+        "title": "HMGCC Pen cipher challenge",
+        "excerpt":"On Friday 11 August, HMGCC hosted the third out of five Face to Face events at the UK Defence Academy which is part of the 2017 Cyber Security Challenge UK masterclass qualifiers. As host, HMGCC found the perfect environment to host a cyber security challenge and it was within this...","categories": [],
+        "tags": ["HMGCC","UK Cyber Security Challenge"],
+        "url": "http://localhost:4000/HMGCC-pen-cipher/"
+      }]

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.4">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-10-25T10:30:06+01:00</updated><id>http://localhost:4000/</id><title type="html">ENUPGR</title><subtitle>Edinburgh Napier Universit Post Graduate Researcher community</subtitle><author><name>{&quot;name&quot;=&gt;nil, &quot;picture&quot;=&gt;nil, &quot;email&quot;=&gt;nil, &quot;twitter&quot;=&gt;nil, &quot;links&quot;=&gt;[{&quot;title&quot;=&gt;nil, &quot;url&quot;=&gt;nil, &quot;icon&quot;=&gt;nil}]}</name></author><entry><title type="html">HMGCC Pen cipher challenge</title><link href="http://localhost:4000/HMGCC-pen-cipher/" rel="alternate" type="text/html" title="HMGCC Pen cipher challenge" /><published>2017-08-20T00:00:00+01:00</published><updated>2017-08-20T00:00:00+01:00</updated><id>http://localhost:4000/HMGCC-pen-cipher</id><content type="html" xml:base="http://localhost:4000/HMGCC-pen-cipher/">&lt;p&gt;On Friday 11 August, &lt;a href=&quot;https://www.hmgcc.gov.uk/&quot;&gt;HMGCC&lt;/a&gt; hosted the third out of five Face to Face events at the UK Defence Academy which is part of the 2017 &lt;a href=&quot;https://www.cybersecuritychallenge.org.uk/competitions/face-to-face&quot;&gt;Cyber Security Challenge UK&lt;/a&gt; masterclass qualifiers.&lt;/p&gt;
+
+&lt;p&gt;As host, HMGCC found the perfect environment to host a cyber security challenge and it was within this environment that they managed to hide one of their challenges in plain sight; a swag pen with HEX characters forming the letters &lt;strong&gt;HMGCC&lt;/strong&gt;. It took the better of an hour before officials had to announce that everybody should “search their tables for any foreign objects”. A pen had for each team member been placed on our desks overnight, and I personally (as well as everyone else) did not think any more of this until the hint was announced. Below is a photo of the pen.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/hmgcc-hex-pen.jpg&quot; alt=&quot;center-aligned-image&quot; class=&quot;align-center&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;pen-hex-values-digitalised&quot;&gt;Pen HEX values digitalised&lt;/h1&gt;
+&lt;p&gt;The obvious first step was to digitalise the HEX values found on the pen. However, some of the letters and digits caused issues as it was hard to distinguish S and 5 from each other. Therefore, first attempt failed and my team mate Eed gave a helping hand by checking for typo’s. Below is the final digital printout which is the basis of the challenge.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;A5     97  0E      CD  3CF2A0   F3BFAF  2418FC
+E2     CB  C906  6EBD  3A       F2      CA
+B972E5CB9  72  EA  59  70  ECD  3C      F2
+A0     F3  BF  AF  24  18  FC   E2      CB
+C9     06  6E      BD  3AF2CA   B972E5  CB972E
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;With the HEX values captured, an initial conversion from HEX to ASCII was attempted using &lt;a href=&quot;https://www.asecuritysite.com/coding/ascii?hex=62657274&amp;amp;hex=62657274&quot;&gt;asecuritysite’s ASCII, Hex, Base-64 and Binary convertor&lt;/a&gt;. The results did not return 100% positive. However, the ASCII conversion gave away that the HEX values had been duplicated. At this moment, we got stuck and the time presure with other challenges due made us decide on utilising one of our free hints (hint disclosed in next section).&lt;/p&gt;
+
+&lt;p&gt;We did not have enough time to program anything during the challenge, thus the above website was used for analysis and conversion from HEX to ASCII. After the challenge, I decided that it would be interesting to script a solution and below code snippet shows how it could have been done using Python 2.7.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;binascii&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;hex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;   A5     97  0E      CD  3CF2A0   F3BFAF  2418FC
+            E2     CB  C906  6EBD  3A       F2      CA
+            B972E5CB9  72  EA  59  70  ECD  3C      F2
+            A0     F3  BF  AF  24  18  FC   E2      CB
+            C9     06  6E      BD  3AF2CA   B972E5  CB972E&quot;&quot;&quot;&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;hex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;hex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;translate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;' &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#remove whitespace and newlines
+&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Hex in ASCII&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\t&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;binascii&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;unhexlify&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;hex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Count of bytes:&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;hex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;bytes&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Python printout:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Hex in ASCII	���&amp;lt;��$����n�:�ʹr�˗.���&amp;lt;��$����n�:�ʹr�˗.
+Count of bytes: 56 bytes
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;As mentioned before, the data duplication can be seen above by the repeating pattern of &lt;strong&gt;�ʹr�˗.&lt;/strong&gt; in the middle and at the end of the HEX string. Effectively, the HEX stream can be cut in half or in its entirety. I leave it thus expect the result to come out twice when solved. Double the points, right? :)&lt;/p&gt;
+
+&lt;p&gt;Being under time pressure, we decided to leave two team mates working on other challenges, while me and Eed continued with help from the new hint.&lt;/p&gt;
+
+&lt;h1 id=&quot;hint-spoilers-and-solution-below&quot;&gt;Hint (spoilers and solution below)&lt;/h1&gt;
+&lt;p&gt;As time progressed, we decided on utilising one of our free hints. It turned out, that we had already passed the first two hints prepared by the officials and we could therefore only get the last one. Mixed feelings, as it meant we had gotten really close, but if we couldn’t make use of the hint then time would have been wasted.&lt;/p&gt;
+
+&lt;p&gt;You are waiting for the hint, aren’t you?&lt;/p&gt;
+
+&lt;p&gt;Ok, so the hint is simply &lt;strong&gt;SMS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;We did not know what to make of it, but raced to Google and  started searching for SMS decoders and quickly discovered an &lt;a href=&quot;https://www.diafaan.com/sms-tutorials/gsm-modem-tutorial/online-sms-pdu-decoder/&quot;&gt;Online SMS PDU Decoder&lt;/a&gt;. This site takes HEX values as input and convert data-streams into readable SMS text messages. Win?! Sadly not, a dead end and we returned to research further into SMS protocols.&lt;/p&gt;
+
+&lt;p&gt;At this moment, we still didn’t really know if we had decoded the HEX values correctly, but the duplicated values pointed in the right direction. Thankfully, it didn’t take long till we discovered &lt;a href=&quot;https://en.wikipedia.org/wiki/GSM_03.38&quot;&gt;GSM 03.38&lt;/a&gt;, a 7-bit GSM alphabet which could have been used to generate the hidden message.&lt;/p&gt;
+
+&lt;p&gt;From the online conversion on &lt;a href=&quot;https://www.asecuritysite.com/coding/ascii?hex=62657274&amp;amp;hex=62657274&quot;&gt;asecuritysite&lt;/a&gt;, each HEX value had already been converted to binary and we simply copied this manually into a text editor and began deciphering by cutting the bit stream into chunks of 7.&lt;/p&gt;
+
+&lt;p&gt;Below is a snippet of the manual process which was used to positively produce the correct answer. HURRAY!&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Binary	HEX	ASCII
+1010010 52	R
+1100101	65	e
+1100001 61 	a 
+1101100 6C 	l
+.
+.
+.
+.
+1110100 74 	t 
+1110101 75 	u 
+1110010 72 	r 
+1100101 65 	e 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Fully automated using Python 2.7 and the bitstring module.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;bitstring&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;binaryString&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;hex&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;16&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;bytes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bitstring&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;BitArray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;binaryString&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;byte&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cut&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#cut bytestream into chunks of 7-bytes
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;chr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;byte&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;bin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#conv datatypes and print bin&amp;gt;int&amp;gt;char
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Python printout:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;R
+e
+a
+l
+i
+s
+e
+ 
+y
+o
+u
+r
+ 
+c
+y
+b
+e
+r
+ 
+f
+u
+t
+u
+r
+e
+.
+.
+.
+.
+.
+.
+.
+R
+e
+a
+l
+i
+s
+e
+ 
+y
+o
+u
+r
+ 
+c
+y
+b
+e
+r
+ 
+f
+u
+t
+u
+r
+e
+.
+.
+.
+.
+.
+.
+.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Browsing to &lt;a href=&quot;http://www.hmgcc.gov.uk&quot;&gt;HMGCC’s&lt;/a&gt; website, have a look at the top left logo and picture with a similar quote. Picture linked below.&lt;/p&gt;
+
+&lt;p&gt;Thanks to HMGCC for the challenge, now to the second pen that was handed out by the end of the Face to Face challenge :)&lt;/p&gt;
+
+&lt;figure class=&quot;half&quot;&gt;
+	&lt;img src=&quot;http://www.hmgcc.gov.uk/assets/img/logo.png&quot; alt=&quot;&quot; /&gt;
+&lt;/figure&gt;</content><author><name>Peter Aaby</name></author><category term="HMGCC" /><category term="UK Cyber Security Challenge" /><summary type="html">On Friday 11 August, HMGCC hosted the third out of five Face to Face events at the UK Defence Academy which is part of the 2017 Cyber Security Challenge UK masterclass qualifiers.</summary></entry></feed>
